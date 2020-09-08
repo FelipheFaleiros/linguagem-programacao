@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Desconto</title>
+        <script>
+            function calcular(){
+                var produto = document.getElementById("produto").value
+                var desconto =produto - produto * 0.1
+                //como o resultado estará dentro do h4, precisamos utilizar o atributo innerHTML
+                document.getElementById("desconto").innerHTML  = `O Valor do Produto com o Desconto ficou R$ ${desconto}`
+           }
+        </script>        
+    </head>
+<body>
+    <h1> Calcular Desconto  </h1>
+    <h2> Insira o valor do Produto
+        <input type="number" id="produto">
+    </h2>
+    <h3>
+        <button type="button" onclick="calcular()"> Valor do Desconto </button>
+    </h3>
+    <h4
+       id="desconto"> 
+    </h4>
+</body>
+</html>

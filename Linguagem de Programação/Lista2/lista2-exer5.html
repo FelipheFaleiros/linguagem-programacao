@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/> 
+        <title>Document</title>
+        <script>
+            function calcular(){
+                //recuperar dados do usuário
+                var n1 = Number(document.getElementById("n1").value)
+                var n2 = Number(document.getElementById("n2").value)
+                var opcao = Number(document.getElementById("opcao").value)
+                var resultado //guada o resultado da operação
+                switch (opcao) {
+                    case 1 : resultado = (n1 + n2) / 2                         
+                        break;
+                    case 2 : if (n1 > n2){
+                            resultado = n1 - n2
+                            }
+                            else {
+                            resultado = n2 - n1                         
+                            }
+                        break;
+                    case 3 : resultado = n1 * n2                         
+                        break;
+                    case 4 : if (n2 != 0){ 
+                        resultado = n1 / n2.toFixed(2)
+                        }
+                        else{
+                            resultado = `Não é possível divisão por Zero`
+                        }                         
+                        break;
+                    default :{ //não entrou em nenhuma opção acima
+                        resultado = `Opção inválida`
+                    }
+                        break;       
+                }
+                //mostrar para o usuário
+                document.getElementById("resultado").innerHTML = resultado
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Lista 2 Exercício 5</h1>
+        <h2>
+            Informe um Número
+            <input type="number" id="n1"/>
+        </h2>
+        <h2>
+            Informe o Segundo Número
+            <input type="number" id="n2"/>
+        </h2>
+        <h3>Escolha uma Opção  <input type="number" id="opcao"/>  <br> 1.Média <br> 2. Subtração <br> 3. Produto <br> 4.Divisão             
+        </h3>
+        <h4> <button type="button" onClick="calcular()"> calcular </button> 
+        </h4>
+        <h3
+         id="resultado">
+        </h3>
+    </body>
+</html>

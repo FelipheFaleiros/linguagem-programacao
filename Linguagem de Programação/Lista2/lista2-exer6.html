@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Exercício 6</title>
+        <style>
+            body{background-color: black; /*Edição do fundo da pagina por petro e letras por branco */
+    
+                color: white;    
+            }     
+        </style>
+        <script>
+            function calcular() {
+                var num1 = Number(document.getElementById("num1").value)
+                var num2 = Number(document.getElementById("num2").value)
+                var escolha = Number(document.getElementById("escolha").value)
+                let resultado
+               switch (escolha) { //função de escolha 
+                    case 1:
+                        resultado = `Exponencial ${Math.pow(num1,num2)}`
+                        break;
+                    case 2:
+                        resultado = `Raiz Quadrada ${Math.sqrt(num1)}  -  ${Math.sqrt(num2)}`
+                        break;
+                    case 3:
+                        resultado = `Raiz Cubica ${Math.cbrt(num1)} - ${Math.cbrt(num1)}`
+                        break;
+                    default: resultado = `Opção Inválida`
+                        break;
+                }
+                //saida de dados 
+                document.getElementById ("resultado").innerHTML = resultado
+            }
+        </script>
+    </head>
+    <body>
+        
+        <h1>Exercício 6 lista2 </h1>
+
+        <h4> Use . no Lugar de Lugar de , </h4> 
+        <h3> Numero 1 ->
+            <input type="number" id="num1"> 
+        </h3>
+        <h3> Numero 2 ->
+            <input type="number" id="num2"> 
+        </h3>
+
+        <h3> Escolha uma Operação: </h3>
+        <h4>
+            <ol>
+                <li> Primeiro Numero elevado ao segundo </li>
+                <li> Raiz Quadrada </li>
+                <li> Raiz Cubica </li>
+            </ol>
+        </h4>
+
+        <h3>
+            <select id="escolha">
+                <option value="1"> Opção 1 </option>:
+                <option value="2"> Opção 2 </option>:
+                <option value="3"> Opção 3 </option>:
+            </select>
+        </h3>
+        <button type="button" onclick="calcular()"> Calcular </button>
+
+        <h3 id="resultado"></h3><!--Mensagem de saida-->
+    </body>
+</html>

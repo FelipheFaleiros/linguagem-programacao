@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Exercício 3</title>
+        <style>
+               h3 {
+                   color: burlywood;
+               }
+               h2 {
+                   color: darkblue;
+               }
+        </style>
+    
+        <script>
+            function calc() {//essa é a função que será chamada para efetivar o calculo
+                //aqui sera feito o calculo do exercicio
+                var numero = Number(document.getElementById("numero").value)
+                var numero2 = Number(document.getElementById("numero2").value)
+                var menor
+                // condição para mostrar o número menor 
+                if (numero < numero2) {//comparação simples e objetiva para mostrar
+                    menor = numero
+                }
+                else {
+                    menor = numero2
+                }
+                document.getElementById("menor").innerHTML = `O menor número é o ${menor}`
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Menor número</h1>
+        <h3><input type="number" placeholder="Digite um número" id="numero">
+        </h3><!--Entrada de dados-->
+        <h3><input type="number" placeholder="Digite um número" id="numero2">
+        </h3>
+       
+        <h3>
+            <button type="button" onclick="calc()">Ver</button>
+        </h3>
+        <h3 id="menor"></h3> <!--Saida-->
+    </body>
+</html>

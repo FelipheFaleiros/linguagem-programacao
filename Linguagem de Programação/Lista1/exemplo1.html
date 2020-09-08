@@ -1,0 +1,76 @@
+<!--comentario-->
+<!DOCTYPE html> <!--identifica para o navegador que é um do documento html versão 5-->
+<html> <!--elemento raiz do html-->
+    <head> <!--cabeçalho da pagina-->
+        <meta charset="utf-8"> <!--o idioma é porguês e portanto precisa suportar acento e cedilha-->
+        <title> Calculadora</title> <!--titulo da página-->
+        <script> 
+        //função será chamada quando o botão for clicado
+            function calcular(){    
+                //recupera o valor do peso informado pelo usuário informado na caixa de texto
+                var peso = document.getElementById("peso").value               
+                //recupera o valor do peso informado pelo usuário informado na caixa de texto
+                var altura = document.getElementById("altura").value
+                //calcular IMC
+                if ((peso == "") || (altura == "")) {
+                    document.getElementById("imc").innerHTML = "Peso e/ou altura não podem ser vazios"
+                }
+                else{
+                    var imc = peso / (altura * altura)
+                    //var imc = peso / Math.pow(altura, 2)
+                    //mostrar o resultado para o usuário
+                    //templete string facilita a junção de texto com conteúdo de variável
+                    //atenção: usamos crase neste caso
+                    //alert(`O valor do IMC é ${imc}`)
+                    //como o resultado estará dentro do h4, precisamos utilizar o atributo innerHTML
+                    //vamos limita o número de casas depois da vírgula: usando a função .toFixed(qtde de casas depois da vígula)
+                    document.getElementById("imc").innerHTML = `O valor do IMC é ${imc.toFixed(2)}`
+                }
+
+                var resultado
+                if (imc < 18.5){
+                    resultado = `Abaixo do Peso`
+                }
+                else if ((imc >= 18.5) && (imc <= 24.9)){
+                    resultado = `Peso Normal`
+                }
+                else if ((imc >= 25) && (imc <= 29.9)){
+                    resultado = `Sobre Peso`
+                }
+                else if ((imc >= 30) && (imc <= 34.9)){
+                    resultado = `Obesidade Grau 1`
+                }
+                else if ((imc >= 35) && (imc <= 39.9)){
+                    resultado = `Obesidade Grau 2`
+                }
+                else {
+                    resultado = `Obesidade Grau 3`
+                }
+                document.getElementById("resultado").innerHTML = `O resultado é ${resultado}`
+            
+                //"" é para conjunto de caracteres - "nome de alguem"
+                //'' é para um caracter apenas 'a'
+                //`` é para template string `frase com uma variável ${variavel}`
+            }
+        </script>
+    </head>
+    <body> <!--corpo da página-->
+        <h1>Calculadora de IMC </h1> <!--cabeçalho do nível-->
+        <h3> Informe seu peso (use ponto (.) não virgula(,)) 
+            <input type="number" id="peso"> <!--caixa de entrada com id peso-->  
+        </h3>
+        <h3>  
+            Informe a sua altura em Metros (utilize ponto) 
+            <input type="number" id="altura"> <!--caixa de texto com id altura-->
+        </h3>
+        <h3>
+            <!--quaando o botão for clicado, chama a função calcular no evento onClick()-->
+            <button type="button" onClick="calcular()"> Calcular botão </button> 
+        </h3>
+        <h4 id="imc"> 
+        </h4>
+        </h3>
+        <h4 id="resultado"> 
+        </h4>
+    </body>
+</html>

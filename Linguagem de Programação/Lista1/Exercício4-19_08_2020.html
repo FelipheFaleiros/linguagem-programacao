@@ -1,0 +1,38 @@
+<!DOCTYPE html><!--identifica para o navegador que é um do documento html versão 5-->
+<html><!--elemento raiz do html--> 
+    <head><!--cabeçalho da pagina-->
+        <meta charset="UTF-8"> <!--o idioma é porguês e portanto precisa suportar acento e cedilha-->
+        <title>Nota</title>
+        <script> 
+            function calcular(){
+                //recupera o valor do peso informado pelo usuário informado na caixa de texto
+                var primeira = document.getElementById("primeira").value
+                var segunda = document.getElementById("segunda").value
+                var media = (2*primeira + 3*segunda) / 5
+                //var imc = peso / Math.pow(altura, 2)
+                //mostrar o resultado para o usuário
+                //templete string facilita a junção de texto com conteúdo de variável
+                //atenção: usamos crase neste caso
+                //alert(`O valor do IMC é ${imc}`)
+                //como o resultado estará dentro do h3, precisamos utilizar o atributo innerHTML
+                //vamos limita o numero de casas depois da vírgula: usando a função .toFixed(qtde de casas depois da vígula)      
+                document.getElementById("media").innerHTML = `A nota do Aluno é ${media.toFixed(2)}`
+            }
+        </script>
+    </head>
+    <body>
+        <h1>   Média do Aluno  </h1>
+        <h2> Insira o Primeira Nota -> 
+            <input type="number" id="primeira">
+        </h2>
+        <h2> Insira o Segunda Nota ->
+            <input type="number" id="segunda">
+        </h2>
+        <h3>
+            <button type="button" onclick="calcular()"> Descobrir a Média  </button>
+        </h3>
+        <h3
+            id="media">
+        </h3>
+    </body>
+</html>

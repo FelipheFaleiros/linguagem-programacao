@@ -1,0 +1,41 @@
+<!DOCTYPE html><!--identifica para o navegador que é um do documento html versão 5-->
+<html><!--elemento raiz do html--> 
+    <head><!--cabeçalho da pagina-->
+        <meta charset="UTF-8"> <!--o idioma é porguês e portanto precisa suportar acento e cedilha-->
+        <title>Trapézio</title>
+        <script> 
+            function calcular(){
+                //recupera o valor do peso informado pelo usuário informado na caixa de texto
+                var maior = document.getElementById("maior").value
+                var menor = document.getElementById("menor").value
+                var altura = document.getElementById("altura").value
+                var area = (parseInt(maior) + parseInt(menor)) * altura / 2
+                //mostrar o resultado para o usuário
+                //templete string facilita a junção de texto com conteúdo de variável
+                //atenção: usamos crase neste caso
+                //alert(`O valor do area é ${area}`)
+                //como o resultado estará dentro do h3, precisamos utilizar o atributo innerHTML
+                //vamos limita o numero de casas depois da vírgula: usando a função .toFixed(qtde de casas depois da vígula)      
+                document.getElementById("area").innerHTML = `A area do trapézio é ${area.toFixed(2)}`
+            }
+        </script>
+    </head>
+    <body>
+        <h1>   Area do Trapézio  </h1>
+        <h2> Insira a Base Maior ->
+            <input type="number" id="maior">
+        </h2>
+        <h2> Insira a Base Menor ->
+            <input type="number" id="menor">
+        </h2>
+        <h2> Insira a Altura ->
+            <input type="number" id="altura">
+        </h2>
+        <h3>
+            <button type="button" onclick="calcular()"> Descobrir a Area </button>
+        </h3>
+        <h3
+            id="area">
+        </h3>
+    </body>
+</html>

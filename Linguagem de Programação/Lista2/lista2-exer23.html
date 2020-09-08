@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Lista 2 </title>
+        <script>
+            function calcular(){//entrada de dados
+                let cod = Number(document.getElementById("cod").value)
+                let quant = Number(document.getElementById("quant").value)
+                //preço unitário
+                let precounit
+                if ((cod >= 1) && (cod <= 10)) {
+                    precounit = 10
+                }
+                else if ((cod >= 11) && (cod <=20)){
+                    precounit = 15
+                }
+                else if ((cod >= 21) && (cod <=30)){
+                    precounit = 20
+                }
+                else if ((cod >= 31) && (cod <=40)){
+                    precounit = 30
+                }
+                else {
+                    precounit = 0 //default
+                }
+                //preco total
+                let precototal = precounit * quant
+                //desconto
+                let desconto
+                if (precototal < 250){
+                    desconto = (precototal * 5)/100
+                }
+                else if (precototal <= 500){
+                    desconto = (precototal * 10)/100
+                }
+                else{
+                    desconto = (precototal * 15)/100
+                }
+                let precofinal = precototal - desconto
+                document.getElementById('resultado').innerHTML = `Preço Unitário R$: ${precounit}  Desconto R$ ${desconto} Preço Final R$ ${precofinal}`
+            }
+        </script>
+    </head>
+    <body>
+        <h1> Exercício 23</h1>
+        <h2>
+            Informe o Código do Produto <input type="number" id="cod">
+        </h2>
+        <h2>
+            Informe a Quantidade de Produto <input type="number" id="quant">
+        </h2>
+        <h3>
+            <button type="button" id="calcular()"> Calcular </button>
+        </h3>
+        <h3 id="resultado"> </h3>
+    </body>
+</html>

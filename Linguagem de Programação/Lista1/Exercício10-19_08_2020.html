@@ -1,0 +1,33 @@
+<!DOCTYPE html><!--identifica para o navegador que é um do documento html versão 5-->
+<html><!--elemento raiz do html--> 
+    <head><!--cabeçalho da pagina-->
+        <meta charset="UTF-8"> <!--o idioma é porguês e portanto precisa suportar acento e cedilha-->
+        <title>Quadrado</title>
+        <script> 
+            function calcular(){
+                //recupera o valor do peso informado pelo usuário informado na caixa de texto
+                var lado = document.getElementById("lado").value
+                var area = lado * lado
+                //mostrar o resultado para o usuário
+                //templete string facilita a junção de texto com conteúdo de variável
+                //atenção: usamos crase neste caso
+                //alert(`O valor do area é ${area}`)
+                //como o resultado estará dentro do h3, precisamos utilizar o atributo innerHTML
+                //vamos limita o numero de casas depois da vírgula: usando a função .toFixed(qtde de casas depois da vígula)      
+                document.getElementById("area").innerHTML = `A area do Quadrado é ${area.toFixed(2)}`
+            }
+        </script>
+    </head>
+    <body>
+        <h1>   Area do Quadrado  </h1>
+        <h2> Insira a lagura do lado ->
+            <input type="number" id="lado">
+        </h2>
+        <h3>
+            <button type="button" onclick="calcular()"> Descobrir a Area </button>
+        </h3>
+        <h3
+            id="area">
+        </h3>
+    </body>
+</html>

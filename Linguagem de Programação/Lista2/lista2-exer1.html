@@ -1,0 +1,58 @@
+<!DOCTYPE html><!--identifica para o navegador que é um do documento html versão 5-->
+<html><!--elemento raiz do html--> 
+    <head><!--cabeçalho da pagina-->
+        <meta charset="UTF-8"> <!--o idioma é porguês e portanto precisa suportar acento e cedilha-->
+        <title>Aprovação</title>
+        <script> 
+            function calcular(){
+                //recupera o valor do peso informado pelo usuário informado na caixa de texto
+                var primeiro = Number(document.getElementById("primeiro").value)
+                var segundo = Number(document.getElementById("segundo").value)
+                var terceiro = Number(document.getElementById("terceiro").value)      
+                var quarto = Number(document.getElementById("quarto").value)      
+                var media = (primeiro + segundo + terceiro + quarto) / 4
+                //var imc = peso / Math.pow(altura, 2)
+                //mostrar o resultado para o usuário
+                //templete string facilita a junção de texto com conteúdo de variável
+                //atenção: usamos crase neste caso
+                //alert(`O valor do IMC é ${imc}`)
+                //como o resultado estará dentro do h4, precisamos utilizar o atributo innerHTML
+                //vamos limita o número de casas depois da vírgula: usando a função .toFixed(qtde de casas depois da vígula)      
+                document.getElementById("media").innerHTML = `O valor da Média é de ${media.toFixed(2)}`
+                
+                var resultado 
+                if (media > 7){
+                    resultado = `O Aluno foi aprovado`
+                }
+                else {
+                    resultado = `O Aluno Não foi Aprovado`
+                }
+                document.getElementById("resultado").innerHTML = `${resultado}`
+            }
+        </script>
+    </head>
+    <body>
+        <h1>   Aprovação do Aluno  </h1>
+        <h2> Insira o Primeiro Número -> 
+            <input type="number" id="primeiro">
+        </h2>
+        <h2> Insira o Segundo Número ->
+            <input type="number" id="segundo">
+        </h2>
+        <h2> Insira o Terceiro Número ->
+            <input type="number" id="terceiro">
+        </h2>
+        <h2> Insira o Quarto Número ->
+            <input type="number" id="quarto">
+        </h2>
+        <h3>
+            <button type="button" onclick="calcular()"> Multiplicar </button>
+        </h3>
+        <h3
+            id="media"> 
+        </h3>
+        <h3
+            id="resultado">
+        </h3>
+    </body>
+</html>

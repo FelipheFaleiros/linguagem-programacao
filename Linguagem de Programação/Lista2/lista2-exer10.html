@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Exercício 10</title>
+        <style>
+            body{background-color: black; /*Edição do fundo da pagina por petro e letras por branco */
+    
+                color: white;    
+            }     
+        </style>
+        <script>
+            function calcular() {//essa é a função que será chamada para efetivar o calculo
+                //aqui sera feito o calculo do exercicio
+                var custo = Number(document.getElementById("custo").value)
+                var vazio
+                
+                //função para comparar informações de verdadeiro ou falso
+                if (custo <= 12000) {
+                    vazio = custo * 0.05 + custo
+                }
+                else if (custo <= 25000) {
+                    vazio = (custo * 0.1) + (custo * 0.15) + custo
+                }
+                else if (custo > 25000) {
+                    vazio = (custo * 0.15) + (custo * 0.2) + custo
+                }
+                document.getElementById("vazio").innerHTML = `R$${vazio.toFixed(2)}`
+            }
+        </script>
+    </head>
+    <body>
+        <h1 >Cálcule Preço de um Veículo ao Consumidor</h1>
+        <h3>Favor usar |.| ao invés de |,| </h3>
+        <h3><input type="number" placeholder="Digite o Custo de Fábrica" id="custo"></h3><!--Entrada de dados-->
+        <h3><button type="button" onclick="calcular()">Calcular Preço</button></h3><!--Botão de ação, onde ira realizar a função-->
+        <h3 id="vazio"></h3><!--Mensagem de saida-->
+    </body>
+</html>

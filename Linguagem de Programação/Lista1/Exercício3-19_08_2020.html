@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> Divisão </title>
+        <script>
+            function calcular(){
+                //recupera o valor informado pelo usuário informado na caixa de texto
+            var divisor = document.getElementById("divisor").value
+            var dividendo = document.getElementById("dividendo").value
+                //calcular a divisao
+            var divisao = divisor / dividendo
+            //mostrar o resultado para o usuário
+            //alert(`O valor do da divisão é ${imc}`)
+            //como o resultado estará dentro do h4, precisamos utilizar o atributo innerHTML
+            //vamos limita o número de casas depois da vírgula: usando a função .toFixed(qtde de casas depois da vígula)
+            document.getElementById("divisao").innerHTML = `O valor da disisão é ${divisao.toFixed(2)}`
+            }
+        </script>
+    </head>
+<body>
+    <h1> Calcular a Divisão</h1>
+    <h2> Insira o Divisor ->
+        <input type="number" id="divisor">
+    </h2>
+    <h2> Insira o Dividendo ->
+        <input type="number" id="dividendo"> 
+    </h2>
+    <h3> 
+        <button type="button" onclick="calcular()"> Calcular a Divisão </button>
+    </h3>
+    <h4 id="divisao">
+    </h4>
+</body>
+</html>

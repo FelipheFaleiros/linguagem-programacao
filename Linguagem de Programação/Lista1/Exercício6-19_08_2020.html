@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Comissão</title>
+        <script>
+            function calcular(){
+                //se os dados forem número, vamos converter usando a função Number()
+                var salario = Number(document.getElementById("salario").value)
+                var vendas = Number(document.getElementById("vendas").value)
+                var comissao = (vendas * 4) / 100
+                var salariofinal = salario + comissao 
+                //como o resultado estará dentro do h4, precisamos utilizar o atributo innerHTML
+                document.getElementById("comissao").innerHTML  = `O Valor da comissao é de R$ ${comissao.toFixed(2)}`
+                document.getElementById("salariofinal").innerHTML  = `O Salario final do colaborador é de R$ ${salariofinal.toFixed(2)}`
+           }
+        </script>        
+    </head>
+<body>
+    <h1> Sálario do Funcionario  </h1>
+    <h2> Insira o valor do salario
+        <input type="number" id="salario">
+    </h2>
+    <h2> Insira a quantidade de vendas
+        <input type="number" id="vendas">
+    </h2>
+    <h3>
+        <button type="button" onclick="calcular()"> Acréssimo </button>
+    </h3>
+    <h4
+       id="comissao"> 
+    </h4>
+    <h4
+       id="salariofinal"> 
+    </h4>
+</body>
+</html>

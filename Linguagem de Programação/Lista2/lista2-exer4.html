@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Lista 2 </title>
+        <style>
+            body{background-color: black; /*Edição do fundo da pagina por petro e letras por branco */
+    
+                color: white;    
+            }     
+        </style>
+        <script>
+            function calcular() {//essa é a função que será chamada para efetivar o calculo
+                //aqui sera feito o calculo do exercicio
+                var numero1 = Number(document.getElementById("numero1").value)
+                var numero2 = Number(document.getElementById("numero2").value)
+                var numero3 = Number(document.getElementById("numero3").value)
+                var maior
+
+                //condição para atribuir valor para uma variavel que receberá o maior numero
+                if ((numero1 >= numero2) && (numero1 >= numero3)) {
+                    maior = numero1
+                }
+                else if ((numero2 >= numero1) && (numero2 >= numero3)) {
+                    maior = numero2
+                }
+                else if ((numero3 >= numero1) && (numero3 >= numero2)) {
+                    maior = numero3
+                }
+                document.getElementById("maior").innerHTML = `O maior número é: ${maior}`
+            }
+        </script>
+    </head>
+    <body>
+        <h1> Exercício 4 </h1>
+        <h2> Maior número</h2>
+        <h3> <input type="number" placeholder="Digite um número" id="numero1">
+        </h3><!--Entrada de dados-->
+        <h3> <input type="number" placeholder="Digite um número" id="numero2">
+        </h3>
+        <h3> <input type="number" placeholder="Digite um número" id="numero3">
+        </h3>
+
+        <h3> 
+            <button type="button" onclick="calcular()">Mostrar</button>
+        </h3>
+
+        <h3 id="maior"></h3><!--Mensagem de saida-->
+    </body>
+</html>

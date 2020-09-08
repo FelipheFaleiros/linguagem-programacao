@@ -1,0 +1,33 @@
+<!DOCTYPE html><!--identifica para o navegador que é um do documento html versão 5-->
+<html><!--elemento raiz do html--> 
+    <head><!--cabeçalho da pagina-->
+        <meta charset="UTF-8"> <!--o idioma é porguês e portanto precisa suportar acento e cedilha-->
+        <title>Peso em Gramas</title>
+        <script> 
+            function calcular(){
+                //recupera o valor do peso informado pelo usuário informado na caixa de texto
+                var peso = document.getElementById("peso").value
+                var gramas = peso * 1000
+                //mostrar o resultado para o usuário
+                //templete string facilita a junção de texto com conteúdo de variável
+                //atenção: usamos crase neste caso
+                //alert(`O valor do gramas é ${gramas}`)
+                //como o resultado estará dentro do h3, precisamos utilizar o atributo innerHTML
+                //vamos limita o numero de casas depois da vírgula: usando a função .toFixed(qtde de casas depois da vígula)      
+                document.getElementById("gramas").innerHTML = `Seu peso em gramas é de: ${gramas}g`
+            }
+        </script>
+    </head>
+    <body>
+        <h1>   Peso de "Kg" para "g" </h1>
+        <h2> Insira seu Peso em Kg -> 
+            <input type="number" id="peso">
+        </h2>
+        <h3>
+            <button type="button" onclick="calcular()"> Descobrir Peso em Gramas </button>
+        </h3>
+        <h3
+            id="gramas">
+        </h3>
+    </body>
+</html>
